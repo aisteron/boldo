@@ -1,0 +1,195 @@
+header
+	margin: 0 calc(50% - $contentWidth/2)
+	color: $black
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 56px 100px
+	background-color: #fff
+	a
+		color: $black
+		text-decoration: none
+		&.logo
+			flex-grow: 1
+
+	nav
+		ul
+			display: flex
+			gap: 40px
+			font-weight: 500
+			margin-right: 40px
+			a:hover
+				text-decoration: underline
+	button.login
+		background-color: transparent
+		outline: none
+		border: 2px solid $black
+		border-radius: 24px
+		padding: 8px 40px
+		cursor: pointer
+		font-family:'Open Sans'
+		font-weight: 600
+		font-size: 1rem
+		transition: all 0.3s ease
+		&:hover
+			color: #65E4A3
+			border-color: #65E4A3
+	
+body.index-page
+	main
+		background-color: #fff
+		margin: 0 calc(50% - $contentWidth / 2)
+		.header
+			text-align: center
+			color: $black
+			span
+				font-size: 20px
+			h1
+				font-size: calc(2vw + 1vh + 2vmin)
+		.last-post
+			width: 1200px
+			margin: 0 auto
+			display: flex
+			justify-content: space-between
+			align-items: center
+			border-bottom: 1px solid #0A2640
+			padding-bottom: 72px
+			img.hero
+				margin-right: 100px
+			a
+				text-decoration: none
+				color: $black
+				&:hover
+					text-decoration: underline				
+			.dsc
+				.category
+					a
+						font-weight: 600
+						display: inline-block
+						margin-right: 12px
+					span.date
+						color: #777777
+				a.title
+					font-size: calc(1vw + 0.5vh + 2vmin)
+					display: inline-block
+					margin-top: 12px
+					margin-bottom: 20px
+				.author
+					display: flex
+					align-items: center
+					img
+						margin-right: 12px	
+		.latest-news
+			padding-top: 96px
+			padding-bottom: 124px
+			width: 1000px
+			margin: 0 auto
+			h2
+				color: #000
+				font-size: calc(1vw + 1vh + 2vmin)
+				margin-top: 0
+				font-weight: normal
+			ul
+				display: flex
+				gap: 50px
+				flex-wrap: wrap
+				li
+					width: 300px
+					>img
+						margin-bottom: 24px
+					.category
+						a
+							font-weight: 600
+							display: inline-block
+							margin-right: 12px
+						span.date
+							color: #777
+					.author
+						display: flex
+						align-items: center
+						img
+							margin-right: 12px			
+
+					a
+						color: #000
+						text-decoration: none
+						&:hover
+							text-decoration: underline
+						&.title
+							font-size: 20px
+							display: inline-block
+							margin-top: 12px
+							margin-bottom: 20px
+			button.more
+				border: 2px solid $black
+				border-radius: 56px
+				padding: 16px 56px
+				color: $black
+				font-size: 20px
+				font-weight: 600
+				font-family: inherit
+				display: block
+				margin-left: auto
+				margin-right: auto
+				margin-top: 96px
+				cursor: pointer
+				background-color: transparent
+				transition: all 0.3s ease
+				&:hover
+					color: #65E4A3
+					border-color: #65E4A3
+		.cta
+			background-color: $black
+			position: relative
+			width: 1200px
+			margin: 0 auto
+			padding: 72px 0
+			text-align: center
+			overflow: hidden
+			border-radius: 10px
+			margin-bottom: 84px
+			>*
+				position: relative
+				z-index: 2
+			&:after
+				content: url(/assets/img/circle.svg)
+				position: absolute
+				top: -20px
+				right: 0
+				z-index: 1
+			span
+				color: #fff
+				font-size: calc(1vw + 1vh + 2vmin)
+				width: 60%
+				display: inline-block
+				margin-bottom: 48px
+			form
+				display: block
+				margin: 0 auto
+				input[type="text"]
+					padding: 12px 32px
+					border-radius: 240px
+					border: none
+					width: 370px
+					font-size: 20px
+					font-family: 'Open Sans', serif
+					&:focus
+						outline: none
+					&::placeholder
+						font-size: inherit
+						font-family: inherit
+						color: #000
+						//transform: translateY(3px)
+				input[type="submit"]
+					border: none
+					color: $black
+					background-color: #65E4A3
+					font-weight: 600
+					font-size: 20px
+					padding: 16px 56px
+					border-radius: 56px
+					margin-left: 24px
+					cursor: pointer
+					transition: all 0.3s ease
+					&:hover
+						background-color: darken(#65E4A3, 20%)
