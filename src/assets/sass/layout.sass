@@ -1,11 +1,14 @@
 header
-	margin: 0 calc(50% - $contentWidth/2)
+	//margin: 0 calc(50% - $contentWidth/2)
+	@include mw
 	color: $black
 	display: flex
 	justify-content: space-between
 	align-items: center
 	padding: 56px 100px
 	background-color: #fff
+	@media(max-width:1200px)
+		padding: 1rem
 	a
 		color: $black
 		text-decoration: none
@@ -13,6 +16,8 @@ header
 			flex-grow: 1
 
 	nav
+		@media(max-width:630px)
+			display: none
 		ul
 			display: flex
 			gap: 40px
@@ -34,11 +39,120 @@ header
 		&:hover
 			color: #65E4A3
 			border-color: #65E4A3
-	
+footer
+	//margin: 0 calc(50% - $contentWidth/2)
+	@include mw
+	background-color: #fff	
+	padding-top: 84px
+	padding-left: 100px	
+	padding-right: 100px
+	padding-bottom: 117px
+	margin-bottom: 1rem
+	@media(max-width:1100px)
+		padding: 2rem
+		>ul
+			li.copy
+				width: auto
+				margin-right: 0
+	@media(max-width:880px)
+		>ul
+			gap: 1rem
+			li
+				width: auto
+	>ul
+		display: flex
+		gap: 70px
+		@media(max-width:590px)
+			flex-direction: column
+	a
+		color: #777
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	li
+		width: 150px
+		&.copy
+			width: 300px
+			color: #777
+			margin-right: 150px
+			p
+				line-height: 28px
+				margin-bottom: 64px
+				margin-top: 30px
+				@media(max-width:590px)
+					margin-bottom: 22px
+		span.header
+			font-size: 20px
+			font-weight: 600
+			color: #000
+			display: inline-block
+			margin-top: 1rem
+			margin-bottom: 2rem
+		ul
+			li
+				line-height: 50px
+				font-size: 20px
+				@media(max-width:590px)
+					line-height: 150%
+				&.flag
+					a
+						display: inline-block
+						margin-right: 10px
+					span
+						background-color: #65E4A3
+						color: $black	
+						font-size: 13px
+						font-weight: 600
+						padding: 6px 14px
+						border-radius: 120px
+.mobile-menu
+	position: absolute
+	top:80px
+	background-color: #fff
+	width: 50%
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2)
+	border-bottom-right-radius: 3px
+	padding: 2rem
+	left: -50%
+	transition: all 0.3s ease-in-out
+	&.open
+		//display: block !important
+		opacity: 1 !important
+		left: 0
+	ul
+		>li
+			line-height: 40px
+			position: relative
+			&.parent
+				>span
+					pointer-events: none
+				&:after
+					content: '►'
+					font-size: 13px
+					//margin-left: 20px
+					position: absolute
+					top: 0
+					right: -1rem
+					transition: all 0.3s ease
+					width: 13px
+					height: 40px
+				&.open
+					&:after
+						transform: rotate(90deg)
+					ul
+						display: block		
+				ul
+					display: none
+					li
+						line-height: 200%
+						font-size: 14px
+						padding-left: 10px
+
 body.index-page
 	main
 		background-color: #fff
-		margin: 0 calc(50% - $contentWidth / 2)
+		//margin: 0 calc(50% - $contentWidth / 2)
+		@include mw
 		.header
 			text-align: center
 			color: $black
@@ -54,6 +168,20 @@ body.index-page
 			align-items: center
 			border-bottom: 1px solid #0A2640
 			padding-bottom: 72px
+			@media(max-width:1220px)
+				width: 100%
+				padding: 20px
+				img.hero
+					margin-right: 1rem
+					width: 80%
+			@media(max-width:870px)		
+				flex-direction: column
+				img.hero
+					margin-right: 0
+					margin-bottom: 2rem
+					width: 100%
+				.dsc
+					width: 100%
 			img.hero
 				margin-right: 100px
 			a
@@ -84,6 +212,9 @@ body.index-page
 			padding-bottom: 124px
 			width: 1000px
 			margin: 0 auto
+			@media(max-width:1020px)
+				width: 100%
+				padding: 20px
 			h2
 				color: #000
 				font-size: calc(1vw + 1vh + 2vmin)
@@ -147,7 +278,10 @@ body.index-page
 			text-align: center
 			overflow: hidden
 			border-radius: 10px
-			margin-bottom: 84px
+			//margin-bottom: 84px
+			@media(max-width:1220px)
+				width: 100%
+				border-radius: 0
 			>*
 				position: relative
 				z-index: 2
@@ -163,9 +297,19 @@ body.index-page
 				width: 60%
 				display: inline-block
 				margin-bottom: 48px
+				@media(max-width:665px)
+					width: 90%
 			form
 				display: block
 				margin: 0 auto
+				@media(max-width:620px)
+					display: flex
+					flex-direction: column
+					gap: 20px
+					align-items: center
+					input[type="submit"]
+						width: 200px
+						margin-left: 0
 				input[type="text"]
 					padding: 12px 32px
 					border-radius: 240px
@@ -173,6 +317,8 @@ body.index-page
 					width: 370px
 					font-size: 20px
 					font-family: 'Open Sans', serif
+					@media(max-width:430px)
+						width: 90%
 					&:focus
 						outline: none
 					&::placeholder

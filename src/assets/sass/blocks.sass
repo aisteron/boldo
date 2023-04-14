@@ -1,0 +1,73 @@
+body.blocks-page
+	background-color: #fff
+	margin: 5vw
+	section.levels
+		display: flex
+		gap: 30px
+		.item
+			box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2)
+			width: 265px
+			padding: 25px
+			color: #888
+			border-radius: 10px
+			text-align: right
+			transition: all 0.3s ease-in-out
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			&.active, &:hover
+				background-color: #3FE297
+				color: #fff
+				.head
+					span.star
+						background-color: darken(#3FE297,10%)
+						img
+							
+							filter: invert(100%) sepia(0%) saturate(7492%) hue-rotate(25deg) brightness(94%) contrast(115%)
+			.head
+				display: flex
+				justify-content: space-between
+				span.level
+					font-size: 24px
+					font-weight: 300
+				span.star
+					border-radius: 50%
+					padding: 9px
+					width: 45px
+					height: 45px
+					img
+						transform: translateX(-1px)
+						width: 24px
+						height: 24px
+						filter: invert(66%) sepia(48%) saturate(3225%) hue-rotate(183deg) brightness(99%) contrast(89%)	
+			span.req
+				font-size: 20px
+				font-weight: 600
+				display: inline-block
+				margin: 1rem 0
+			ul.ok, ul.circle
+				padding-right: 28px
+				line-height: 150%	
+				margin-bottom: 1rem
+			ul.ok
+				li
+					position: relative
+					&:after
+						content: url(/assets/img/ok.svg)
+						position: absolute
+						top: 4px
+						right: -28px	
+			ul.circle
+				padding-right: 24px
+				li
+					position: relative
+					&:after
+						content: '○'
+						font-size: 20px
+						position: absolute
+						top: -1px
+						right: -24px
+			span.annual
+				font-size: 13px
+				display: inline-block
+				margin-top: auto
